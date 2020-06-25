@@ -80,9 +80,7 @@ namespace MyTaxi.Web.Controllers
             return View(taxiEntity);
         }
 
-        // POST: Taxis/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Taxis/Edit/5        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, TaxiEntity taxiEntity)
@@ -111,8 +109,7 @@ namespace MyTaxi.Web.Controllers
                 return NotFound();
             }
 
-            var taxiEntity = await _context.Taxis
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var taxiEntity = await _context.Taxis.FindAsync(id);
             if (taxiEntity == null)
             {
                 return NotFound();
