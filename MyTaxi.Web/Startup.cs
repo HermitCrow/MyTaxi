@@ -32,7 +32,7 @@ namespace MyTaxi.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+           
             services.AddDbContext<DataContext>(cfg => 
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -62,7 +62,7 @@ namespace MyTaxi.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Taxis}/{action=Index}/{id?}");
             });
         }
     }
