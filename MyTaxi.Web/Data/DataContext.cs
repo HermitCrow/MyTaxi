@@ -12,6 +12,7 @@ namespace MyTaxi.Web.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base (options)
         {
+
         }
 
         public DbSet<TaxiEntity> Taxis { get; set; }
